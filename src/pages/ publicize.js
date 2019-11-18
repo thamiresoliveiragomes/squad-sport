@@ -7,6 +7,21 @@ const template = `
         title: 'publicize',
         // onClick: breve,
     })}
+    ${Input({ 
+        
+        placeholder: 'Nome',
+        type: 'Nome'
+    })}
+    ${Input({ 
+        
+        placeholder: 'exemplo@exemplo.com.br',
+        type: 'email'
+    })}
+    ${Input({ 
+        
+        placeholder: 'Senha',
+        type: 'password'
+    })}
 
 `;
 
