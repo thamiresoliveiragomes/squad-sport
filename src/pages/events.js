@@ -15,8 +15,8 @@ function printEvent(post) {
   const valor = post.data().valor;
 
   const template = `
-    <section class ='card-events'>
-    <img src= '${imagem}'/>
+    <div class ='card-events'>
+    <img src= '${imagem} class="card-events-img"/>
     <p>
     Evento: ${evento}
     </p>
@@ -38,7 +38,7 @@ function printEvent(post) {
     <p>
     Sobre o evento: ${descricao}
     </p>
-    </section>
+    </div>
     `
     
   eventList.innerHTML += template;
@@ -57,8 +57,8 @@ function loadEvent() {
 
 function Events() {
   const template = `
-    <li class="eventos">
-    </li>
+    <ul class="eventos">
+    </ul>
     ${Button({
       id: "events",
       title: "events"
