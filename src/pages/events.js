@@ -7,10 +7,9 @@ const template = `
         title: 'events',
         // onClick: breve,
     })}
-
-`;
-
-return template;
+    `;
+    
+    return template;
 }
 
 export default Events;
