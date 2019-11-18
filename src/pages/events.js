@@ -1,5 +1,4 @@
 import Button from "../components/button.js";
-
 function printEvent(post) {
   const eventList = document.querySelector(".eventos");
   const data = post
@@ -13,10 +12,9 @@ function printEvent(post) {
   const imagem = post.data().imagem;
   const localizacao = post.data().localização;
   const valor = post.data().valor;
-
   const template = `
-    <div class ='card-events'>
-    <img src= '${imagem} class="card-events-img"/>
+    <section class ='card-events'>
+    <img src= '${imagem}'/>
     <p>
     Evento: ${evento}
     </p>
@@ -24,7 +22,7 @@ function printEvent(post) {
     Data: ${data}
     </p>
     <p>
-    Modaliade: ${esporte} 
+    Modaliade: ${esporte}
     </p>
     <p>
     Gênero: ${genero}
@@ -38,40 +36,42 @@ function printEvent(post) {
     <p>
     Sobre o evento: ${descricao}
     </p>
-    </div>
+    </section>
     `
-    
   eventList.innerHTML += template;
 }
-
 function loadEvent() {
   const postCollection = firebase.firestore().collection("events");
-  const postList = document.querySelector(".eventos");
   postCollection.get().then(snap => {
-    postList.innerHTML = "";
-    snap.forEach(post => {
+      snap.forEach(post => {
       printEvent(post);
     });
   });
 }
-
-function Events() {
-  const template = `
-    <ul class="eventos">
-    </ul>
-    ${Button({
-      id: "events",
-      title: "events"
-      // onClick: breve,
-    })}
-    `;
-
-  return template;
+function Publicize() {
+    window.location.hash = '#publicize';
 }
-
+function News() {
+    window.location.hash = '#news';
+}
+function Events() {
+    const template = `
+        <ul class="eventos"></ul>
+        ${Button({
+            id:'news',
+            title: 'Notícias',
+            onClick: News,
+        })}
+        ${Button({
+            id:'publicize',
+            title: 'Divulgue seu evento',
+            onClick: Publicize,
+        })}
+    `;
+    return template;
+}
 window.app = {
   loadEvent,
   printEvent
 };
-
 export default Events;
