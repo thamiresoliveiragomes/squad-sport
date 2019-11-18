@@ -1,6 +1,8 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
+function backPage() {
+  window.location.hash = '#events';
 
 function send(){
   const name = document.querySelector('.js-name').value;
@@ -71,6 +73,12 @@ function Publicize() {
     type: 'text'
   })}
   ${Input({
+    placeholder: 'Data do Evento',
+    type: 'data'
+  })}
+  ${Input({
+    placeholder: 'Hora',
+    type: 'time'
     class: 'js-date-event',
     placeholder: 'Data do Evento',
     type: 'timestamp'
@@ -84,12 +92,11 @@ function Publicize() {
     onClick: send,
   })}
   ${Button({
-    id: 'publicize',
+    id: 'backPage',
     title: 'Voltar',
-    // onClick: breve,
+    onClick: backPage,
   })}
-</form>
-`;
+  </form>`;
 
   return template;
 }

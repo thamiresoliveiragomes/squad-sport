@@ -55,18 +55,29 @@ function loadEvent() {
   });
 }
 
+function Publicize() {
+    window.location.hash = '#publicize';
+}
+
+function News() {
+    window.location.hash = '#news';
+}
+
 function Events() {
-  const template = `
-    <li class="eventos">
-    </li>
-    ${Button({
-      id: "events",
-      title: "events"
-      // onClick: breve,
-    })}
+    const template = `
+        ${Button({ 
+            id:'news',
+            title: 'Notícias',
+            onClick: News,
+        })}
+        ${Button({ 
+            id:'publicize',
+            title: 'Divulgue seu evento',
+            onClick: Publicize,
+        })}
     `;
 
-  return template;
+    return template;
 }
 
 window.app = {
