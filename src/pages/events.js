@@ -2,41 +2,41 @@ import Button from "../components/button.js";
 
 function printEvent(post) {
   const eventList = document.querySelector(".eventos");
-  const data = post
+  const date = post
     .data()
-    .data.toDate()
+    .date.toDate()
     .toLocaleString("pt-BR");
-  const descricao = post.data().descrição;
-  const esporte = post.data().esporte;
-  const evento = post.data().evento;
-  const genero = post.data().gênero;
-  const imagem = post.data().imagem;
-  const localizacao = post.data().localização;
-  const valor = post.data().valor;
+  const additional = post.data().additional;
+  const sport = post.data().sport;
+  const event = post.data().event;
+  const gender = post.data().gender;
+  const image = post.data().image;
+  const address = post.data().address;
+  const price = post.data().price;
 
   const template = `
     <section class ='card-events'>
-    <img src= '${imagem}'/>
+    <img src= '${image}'/>
     <p>
-    Evento: ${evento}
+    Evento: ${event}
     </p>
     <p>
-    Data: ${data}
+    Data: ${date}
     </p>
     <p>
-    Modaliade: ${esporte} 
+    Modaliade: ${sport} 
     </p>
     <p>
-    Gênero: ${genero}
+    Gênero: ${gender}
     </p>
     <p>
-    Localização: ${localizacao}
+    Localização: ${address}
     </p>
     <p>
-    Valor(es): ${valor}
+    Valor(es): ${price}
     </p>
     <p>
-    Sobre o evento: ${descricao}
+    Sobre o evento: ${additional}
     </p>
     </section>
     `
@@ -46,10 +46,8 @@ function printEvent(post) {
 
 function loadEvent() {
   const postCollection = firebase.firestore().collection("events");
-//   const postList = document.querySelector(".eventos");
   postCollection.get().then(snap => {
-    // postList.innerHTML = "";
-    snap.forEach(post => {
+      snap.forEach(post => {
       printEvent(post);
     });
   });
@@ -76,10 +74,19 @@ function Events() {
             title: 'Divulgue seu evento',
             onClick: Publicize,
         })}
+        ${Button({ 
+          class: 'js-genero',
+          id:'filter',
+          title: 'Filtros',
+          // onClick: templateFilter,
+        })}
+        
     `;
 
     return template;
 }
+
+
 
 window.app = {
   loadEvent,
