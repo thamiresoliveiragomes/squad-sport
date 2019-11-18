@@ -1,19 +1,20 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
+function backPage() {
+  window.location.hash = '#events';
+}
+
 function Publicize() {
   const template = `
   <form>
-    ${Input({
-
+  ${Input({
     placeholder: 'Nome',
     type: 'text'
   })}
-    ${Input({
-
+  ${Input({
     placeholder: 'exemplo@exemplo.com.br',
     type: 'email'
-    
   })}
   <select name="modality" id="select">
   <option value="">Modalidade</option>
@@ -25,13 +26,11 @@ function Publicize() {
   <option value="natacao">Natação</option>
   <option value="vôlei">Volei</option>
   </select>
-    ${Input({
-
+  ${Input({
     placeholder: 'Nome do Evento',
     type: 'text'
   })}
   ${Input({
-
     placeholder: 'Valor do Evento',
     type: 'number'
   })}
@@ -43,17 +42,14 @@ function Publicize() {
   <option value="Outros">Outros</option>
   </select>
   ${Input({
-
     placeholder: 'Endereço',
     type: 'text'
   })}
   ${Input({
-
     placeholder: 'Data do Evento',
     type: 'data'
   })}
   ${Input({
-
     placeholder: 'Hora',
     type: 'time'
   })}
@@ -66,12 +62,11 @@ function Publicize() {
     onClick: send,
   })}
   ${Button({
-    id: 'publicize',
+    id: 'backPage',
     title: 'Voltar',
-    // onClick: breve,
+    onClick: backPage,
   })}
-</form>
-`;
+  </form>`;
 
   return template;
 }

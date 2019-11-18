@@ -15,5 +15,8 @@
     "url": "https://github.com/thamiresoliveiragomes/squad-sport/issues"
   },
   "homepage": "https://github.com/thamiresoliveiragomes/squad-sport#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "xml-js": "^1.6.11"
+  }
 }
