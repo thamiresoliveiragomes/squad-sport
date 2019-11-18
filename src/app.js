@@ -37,3 +37,4 @@ function pageRoute() {
 
 window.addEventListener('load', pageRoute);
 window.addEventListener('hashchange', pageRoute, false);
+
