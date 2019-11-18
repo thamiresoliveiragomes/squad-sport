@@ -13,6 +13,7 @@ function Publicize() {
 
     placeholder: 'exemplo@exemplo.com.br',
     type: 'email'
+    
   })}
   <select name="modality" id="select">
   <option value="">Modalidade</option>
