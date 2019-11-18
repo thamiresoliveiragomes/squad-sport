@@ -1,41 +1,63 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
+function send(){
+  const name = document.querySelector('.js-name').value;
+  const date = document.querySelector('.js-date-event').value;
+  const email = document.querySelector('.js-email').value;
+  const sport = document.querySelector('.js-modality').value;
+  const event = document.querySelector('.js-name-event').value;
+  const gender = document.querySelector('.js-gender').value;
+  const address = document.querySelector('.js-address').value;
+  const price = document.querySelector('.js-price').value;
+  const events = {
+    name,
+    date,
+    email,
+    sport,
+    event,
+    gender,
+    address,
+    price,
+  };
+  firebase.firestore().collection('divulge').add(events);
+}
+
 function Publicize() {
   const template = `
   <form>
     ${Input({
-
+    class: 'js-name',
     placeholder: 'Nome',
     type: 'text'
   })}
     ${Input({
-
+    class: 'js-email',
     placeholder: 'exemplo@exemplo.com.br',
     type: 'email'
-    
   })}
-  <select name="modality" id="select">
+  <select class="js-modality" id="select">
   <option value="">Modalidade</option>
   <option value="atletismo">Atletismo</option>
-  <option value="corrida_de_rua">Corrida de Rua</option>
+  <option value="corrida">Corrida</option>
   <option value="futebol">Futebol</option>
   <option value="futsal">Futsal</option>
   <option value="handebol">Handebol</option>
+  <option value="MMA">MMA</option>
   <option value="natacao">Natação</option>
   <option value="vôlei">Volei</option>
   </select>
     ${Input({
-
+    class: 'js-name-event',
     placeholder: 'Nome do Evento',
     type: 'text'
   })}
   ${Input({
-
+    class: 'js-price',
     placeholder: 'Valor do Evento',
     type: 'number'
   })}
-  <select name="gender" id="select">
+  <select name="js-gender" id="select">
   <option value="">Gênero</option>
   <option value="Feminino">Feminino</option>
   <option value="Masculino">Masculino</option>
@@ -43,23 +65,18 @@ function Publicize() {
   <option value="Outros">Outros</option>
   </select>
   ${Input({
-
+    class: 'js-address',
     placeholder: 'Endereço',
     type: 'text'
   })}
   ${Input({
-
+    class: 'js-date-event',
     placeholder: 'Data do Evento',
-    type: 'data'
-  })}
-  ${Input({
-
-    placeholder: 'Hora',
-    type: 'time'
+    type: 'timestamp'
   })}
   <textarea rows='8'
   cols='50' placeholder='Informações Complementares'
-  class=''> </textarea>
+  class='js-additional-infor'> </textarea>
   ${Button({
     id: 'publicize',
     title: 'Enviar',
