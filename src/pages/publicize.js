@@ -3,6 +3,7 @@ import Input from '../components/input.js';
 
 function backPage() {
   window.location.hash = '#events';
+}
 
 function send(){
   const name = document.querySelector('.js-name').value;
@@ -78,7 +79,7 @@ function Publicize() {
   })}
   ${Input({
     placeholder: 'Hora',
-    type: 'time'
+    type: 'time',
     class: 'js-date-event',
     placeholder: 'Data do Evento',
     type: 'timestamp'

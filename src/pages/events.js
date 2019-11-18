@@ -46,9 +46,9 @@ function printEvent(post) {
 
 function loadEvent() {
   const postCollection = firebase.firestore().collection("events");
-  const postList = document.querySelector(".eventos");
+//   const postList = document.querySelector(".eventos");
   postCollection.get().then(snap => {
-    postList.innerHTML = "";
+    // postList.innerHTML = "";
     snap.forEach(post => {
       printEvent(post);
     });
@@ -65,6 +65,7 @@ function News() {
 
 function Events() {
     const template = `
+        <ul class="eventos"></ul>
         ${Button({ 
             id:'news',
             title: 'Notícias',
