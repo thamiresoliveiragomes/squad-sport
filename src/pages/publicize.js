@@ -1,6 +1,7 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
+
 function send(){
   const name = document.querySelector('.js-name').value;
   const date = document.querySelector('.js-date-event').value;
