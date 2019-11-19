@@ -5,11 +5,11 @@
   box-sizing: border-box;
 }
 .primary-button {
-  background-color: yellow;
+  background-color: #FFBD12;
 }
 
 .message-area {
-  background-color: yellow;
+  background-color: #FFBD12;
 }
 .container-events {
   max-width: 800px;

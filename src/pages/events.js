@@ -43,10 +43,10 @@ function loadEvent() {
   });
 }
 function Publicize() {
-  window.location.hash = "#publicize";
+  window.location.hash = '#publicize';
 }
 function News() {
-  window.location.hash = "#news";
+  window.location.hash = '#news';
 }
 function Events() {
   const template = `
