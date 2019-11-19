@@ -28,4 +28,9 @@ function News() {
   return template;
 }
 
+window.news = {
+  api
+};
+
 export default News;
+
