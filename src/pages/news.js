@@ -1,5 +1,5 @@
 import Button from "../components/button.js";
-
+  
 function backPage() {
   window.location.hash = '#events';
 }
@@ -23,25 +23,20 @@ function api() {
     });
 };
 
-function News(titleNews, link, imgNews) {
-  let template =  `
-    <div class='container-events'>
-      <ul class="eventos">
-        <li class ='card-event'>
-          <figure class='card-event-img'>
-              <img src= '${imgNews}'/>
-          </figure>
-          <article class='card-event-text'>
-            <p>
-              <strong>Titulo:</strong> ${titleNews} <br />
-              <a href="${link}" target="blank"><strong>Notícia</strong></a>
-            </p>
-          </article>
-        </li>
-      </ul>
-    
-    </div>
-  `;
+function News() {
+  const template = `
+        ${Button({
+          id: "events",
+          title: "Eventos",
+          onClick: backPage
+        })}
+        ${Button({
+          id: "publicize",
+          title: "Divulgue seu evento",
+          onClick: Publicize
+        })}
+    `;
+
   return template;
 }
 
@@ -50,3 +45,4 @@ window.news = {
 };
 
 export default News;
+
