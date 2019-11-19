@@ -9,6 +9,7 @@ function Publicize() {
 }
 
 function api() {
+  console.log('teste')
   fetch("http://18.228.196.34/ge/futebol-americano")
     .then(res => res.json())
     .then(data => {
