@@ -3,6 +3,7 @@ import Publicize from './pages/publicize.js';
 import News from './pages/news.js';
 import MapTemplate from './pages/map.js';
 
+
 function pageRoute() {
   const page = (window.location.hash) ? window.location.hash : '#events';
   switch (page) {

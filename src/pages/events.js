@@ -15,6 +15,7 @@ function printEvent(post) {
   const price = post.data().price;
 
   const template = `
+  
     <li class ='card-event'>
         <div class='card-event-img'>
             <img src= '${image}'/>
@@ -31,6 +32,7 @@ function printEvent(post) {
         </p>
         </div>
     </li>
+    
     `;
   eventList.innerHTML += template;
 }

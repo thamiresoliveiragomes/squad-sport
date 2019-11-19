@@ -4,6 +4,7 @@
   list-style: none;
   box-sizing: border-box;
 }
+
 .primary-button {
 
   background-color: #FFBD12;
@@ -39,10 +40,11 @@
 }
 .card-event-img img {
   max-width: 100%;
-  box-shadow: 0 0 5px #333;
+  box-shadow: 0 0 60px #FFBD12;
   border-radius: 10px 0px;
 }
 .container-buttons {
   padding: 10px;
   text-align: center;
 }
+
