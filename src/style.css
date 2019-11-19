@@ -6,15 +6,23 @@
 }
 .primary-button {
   background-color: yellow;
+  padding: 5px 15px;
+  border: 0 none;
+  border-radius: 5px;
+  box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 .message-area {
-  background-color: yellow;
+  padding: 5px 15px;
+  border: 0 none;
+  border-radius: 5px;
+  box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 .container-events {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
+  
 }
 .card-event {
   display: flex;
@@ -32,10 +40,4 @@
 .container-buttons {
   padding: 10px;
   text-align: center;
-}
-.container-buttons button {
-  padding: 5px 15px;
-  border: 0 none;
-  border-radius: 5px;
-  box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.2);
 }
