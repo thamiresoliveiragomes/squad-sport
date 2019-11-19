@@ -21,13 +21,10 @@ function printEvent(post) {
         </figure>
         <article class='card-event-text'>
         <p>
-            Evento: ${event} <br />
-            Data: ${date} <br />
-            Modaliade: ${sport} <br />
-            Gênero: ${gender} <br />
-            Localização: ${address} <br />
-            Valor(es): ${price} <br />
-            Sobre o evento: ${additional}
+            <strong>Evento:</strong> ${event} <br />
+            <strong>Data:</strong> ${date} <br />
+            <strong>Localização:</strong> ${address} <br />
+            <strong>Valor:</strong> ${price}
         </p>
         </article>
     </li>
