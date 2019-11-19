@@ -47,10 +47,12 @@ function Publicize() {
 }
 function News() {
   window.location.hash = '#news';
+
 }
 
 function Maps() {
   window.location.hash = '#map';
+
 }
 function Events() {
   const template = `
