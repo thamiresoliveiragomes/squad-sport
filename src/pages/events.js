@@ -47,6 +47,7 @@ function Publicize() {
 }
 function News() {
   window.location.hash = '#news';
+
 }
 
 function Events() {
