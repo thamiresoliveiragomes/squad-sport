@@ -1,7 +1,4 @@
 import Button from "../components/button.js";
-fetch('http://18.228.196.34/r7/mais-esportes')
-  .then(res => res.json())
-  .then(data => console.log(data));
   
 function backPage() {
   window.location.hash = '#events';
@@ -10,6 +7,21 @@ function backPage() {
 function Publicize() {
   window.location.hash = '#publicize';
 }
+
+function api() {
+  console.log('teste')
+  fetch("http://18.228.196.34/ge/futebol-americano")
+    .then(res => res.json())
+    .then(data => {
+      document.querySelector('main').innerHTML = '';
+      data.forEach(data => {
+        let titleNews = data.title;
+        let link = data.link;
+        let imgNews = data.image;
+        document.querySelector('main').innerHTML+= News(titleNews, link, imgNews)
+      });
+    });
+};
 
 function News() {
   const template = `
