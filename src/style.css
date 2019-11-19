@@ -4,12 +4,18 @@
   list-style: none;
   box-sizing: border-box;
 }
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .primary-button {
-  background-color: yellow;
+  background-color: #FFBD12;
   padding: 5px 15px;
   border: 0 none;
   border-radius: 5px;
   box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2vw;
 }
 
 .message-area {
@@ -17,6 +23,7 @@
   border: 0 none;
   border-radius: 5px;
   box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2vw;
 }
 .container-events {
   max-width: 800px;
@@ -45,19 +52,6 @@
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
-}
-
-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: #999;
-}
 
 a, a:hover, a:focus {
     color: inherit;
@@ -146,6 +140,46 @@ a[data-toggle="collapse"] {
   box-shadow: none;
 }
 
+/* Page publicize */
+
+.form-event {
+  display: flex;
+  flex-direction: column;
+}
+.event-data {
+  display: flex;
+  flex-direction: column;                                                                                                                                                                                                           ;
+  justify-content: center;
+  align-items: center;
+} 
+.publicize-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw;
+}
+.js-gender {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1vw;
+  border-radius: 15px;
+  background-color: #FFBD12;
+}
+.js-additional-infor {
+  justify-content: center;
+  resize: none;
+  padding: 1vw;
+  margin-bottom: 1vw;
+  border-radius: 15px;
+}
+.btn {
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 @media (max-width: 768px) {
   #sidebar {
       margin-left: -250px;
@@ -154,3 +188,4 @@ a[data-toggle="collapse"] {
       margin-left: 0;
   }
 }
+

@@ -51,66 +51,72 @@ function sendEvent(){
 
 function Publicize() {
   const template = `
-  <form>
+  <main class="publicize-main"></main>
+  <section class="form-event">
+    <form class="event-data">
+      ${Input({
+      class: 'js-name',
+      placeholder: 'Nome',
+      type: 'text',
+    })}
+      ${Input({
+      class: 'js-email',
+      placeholder: 'exemplo@exemplo.com.br',
+      type: 'email',
+    })}
     ${Input({
-    class: 'js-name',
-    placeholder: 'Nome',
-    type: 'text',
-  })}
+      class: 'js-modality',
+      placeholder: 'Qual o esporte',
+      type: 'txt',
+    })}
+      ${Input({
+      class: 'js-name-event',
+      placeholder: 'Nome do Evento',
+      type: 'text',
+    })}
     ${Input({
-    class: 'js-email',
-    placeholder: 'exemplo@exemplo.com.br',
-    type: 'email',
-  })}
-  ${Input({
-    class: 'js-modality',
-    placeholder: 'Qual o esporte',
-    type: 'txt',
-  })}
+      class: 'js-price',
+      placeholder: 'Valor do Evento',
+      type: 'number',
+    })}
+    <select class="js-gender" id="select">
+    <option value="null">Gênero</option>
+    <option value="Feminino">Feminino</option>
+    <option value="Masculino">Masculino</option>
+    <option value="Misto">Misto</option>
+    <option value="Outros">Outros</option>
+    </select>
     ${Input({
-    class: 'js-name-event',
-    placeholder: 'Nome do Evento',
-    type: 'text',
-  })}
-  ${Input({
-    class: 'js-price',
-    placeholder: 'Valor do Evento',
-    type: 'number',
-  })}
-  <select class="js-gender" id="select">
-  <option value="">Gênero</option>
-  <option value="Feminino">Feminino</option>
-  <option value="Masculino">Masculino</option>
-  <option value="Misto">Misto</option>
-  <option value="Outros">Outros</option>
-  </select>
-  ${Input({
-    class: 'js-address',
-    placeholder: 'Endereço',
-    type: 'text',
-  })}
-  ${Input({
-    class: 'js-date-event',
-    type: 'date',
-  })}
-  ${Input({
-    class: 'js-hour-event',
-    type: 'time',
-  })}
-  <textarea rows='8'
-  cols='50' placeholder='Informações Complementares'
-  class='js-additional-infor'> </textarea>
-  ${Button({
-    id: 'publicize',
-    title: 'Enviar',
-    onClick: sendEvent,
-  })}
-  ${Button({
-    id: 'backPage',
-    title: 'Voltar',
-    onClick: backPage,
-  })}
-  </form>`;
+      class: 'js-address',
+      placeholder: 'Endereço',
+      type: 'text',
+    })}
+    ${Input({
+      class: 'js-date-event',
+      type: 'date',
+    })}
+    ${Input({
+      class: 'js-hour-event',
+      type: 'time',
+    })}    
+    <textarea rows='8'
+      cols='50' placeholder='Informações Complementares'
+      class='js-additional-infor'> 
+    </textarea> 
+    <div class="btn">
+      ${Button({
+        id: 'publicize',
+        title: 'Enviar',
+        onClick: sendEvent,
+      })}
+      ${Button({
+        id: 'backPage',
+        title: 'Voltar',
+        onClick: backPage,
+      })}
+    </div>     
+    </form>
+  </section>`;
 
   return template;
 }
