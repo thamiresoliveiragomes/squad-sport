@@ -1,16 +1,4 @@
 import Button from "../components/button.js";
-function api() {
-  fetch("http://18.228.196.34/ge/volei")
-    .then(res => res.json())
-    .then(data => {
-      data.map(data => {
-        let titleNews = data.title;
-        let shortDescriptionNews = data.short_description;
-        let imgNews = data.image;
-        return titleNews, shortDescriptionNews, imgNews
-      });
-    });
-};
 
 function backPage() {
   window.location.hash = '#events';
@@ -19,18 +7,35 @@ function backPage() {
 function Publicize() {
   window.location.hash = '#publicize';
 }
-function News(data) {
-  const template = `
+
+function api() {
+  fetch("http://18.228.196.34/ge/futebol-americano")
+    .then(res => res.json())
+    .then(data => {
+      document.querySelector('main').innerHTML = '';
+      data.forEach(data => {
+        let titleNews = data.title;
+        let shortDescriptionNews = data.short_description;
+        let imgNews = data.image;
+        document.querySelector('main').innerHTML+= News(titleNews, shortDescriptionNews, imgNews)
+      });
+    });
+};
+
+api();
+
+function News(titleNews, shortDescriptionNews, imgNews) {
+  let template =  `
     <div class='container-events'>
       <ul class="eventos">
         <li class ='card-event'>
           <figure class='card-event-img'>
-              // <img src= ''/>
+              <img src= '${imgNews}'/>
           </figure>
           <article class='card-event-text'>
             <p>
-                Titulo: <br />
-                Notícia: 
+              <strong>Titulo:</strong> ${titleNews} <br />
+              <strong>Notícia:</strong> ${shortDescriptionNews}
             </p>
           </article>
         </li>
@@ -48,7 +53,7 @@ function News(data) {
         })}
       </section>
     </div>
-    `;
+  `;
   return template;
 }
 
