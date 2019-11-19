@@ -7,7 +7,6 @@ function backPage() {
     window.location.hash = '#events';
   }
 }
-
 function cleanPublicize() {
   document.querySelector('.js-name').value = '',
   document.querySelector('.js-date-event').value = '',
