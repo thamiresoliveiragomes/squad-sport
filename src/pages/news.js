@@ -1,8 +1,17 @@
 import Button from "../components/button.js";
-fetch('http://18.228.196.34/r7/mais-esportes')
-  .then(res => res.json())
-  .then(data => console.log(data));
-  
+function api() {
+  fetch("http://18.228.196.34/ge/volei")
+    .then(res => res.json())
+    .then(data => {
+      data.map(data => {
+        let titleNews = data.title;
+        let shortDescriptionNews = data.short_description;
+        let imgNews = data.image;
+        return titleNews, shortDescriptionNews, imgNews
+      });
+    });
+};
+
 function backPage() {
   window.location.hash = '#events';
 }
@@ -10,9 +19,23 @@ function backPage() {
 function Publicize() {
   window.location.hash = '#publicize';
 }
-
-function News() {
+function News(data) {
   const template = `
+    <div class='container-events'>
+      <ul class="eventos">
+        <li class ='card-event'>
+          <figure class='card-event-img'>
+              <img src= '${data.imgNews}'/>
+          </figure>
+          <article class='card-event-text'>
+            <p>
+                Titulo: ${data.titleNews} <br />
+                Notícia: ${data.shortDescriptionNews}
+            </p>
+          </article>
+        </li>
+      </ul>
+      <section class="container-buttons">
         ${Button({
           id: "events",
           title: "Eventos",
@@ -23,8 +46,9 @@ function News() {
           title: "Divulgue seu evento",
           onClick: Publicize
         })}
+      </section>
+    </div>
     `;
-
   return template;
 }
 
