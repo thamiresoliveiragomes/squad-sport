@@ -57,11 +57,6 @@ var geocodingParams;
     
     navigator.geolocation.getCurrentPosition(callback);
 });
-
-  
-  // Call the geocode method with the geocoding parameters,
-  // the callback and an error callback function (called if a
-  // communication error occurs):
  
   
 //   // Create the parameters for the routing request:
