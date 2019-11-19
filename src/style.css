@@ -4,20 +4,18 @@
   list-style: none;
   box-sizing: border-box;
 }
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .primary-button {
-  background-color: #ffbd12;
+  background-color: #FFBD12;
   padding: 5px 15px;
   border: 0 none;
   border-radius: 5px;
   box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.2);
-}
-
-.message-area {
-  
-  padding: 5px 15px;
-  border: 0 none;
-  border-radius: 5px;
-  box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2vw;
 }
 
 .message-area {
@@ -25,17 +23,17 @@
   border: 0 none;
   border-radius: 5px;
   box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2vw;
 }
 .container-events {
-  max-width: 600px;
+  max-width: 800px;
   width: 100%;
   margin: 0 auto;
+  
 }
 .card-event {
   display: flex;
   padding: 20px;
-  border: 1px solid #ccc;
-  max-height: 300px;
 }
 .card-event-img {
   flex: 0 0 200px;
@@ -43,39 +41,58 @@
 }
 .card-event-img img {
   max-width: 100%;
-  box-shadow: 0 0 60px #FFBD12;
+  box-shadow: 0 0 5px #333;
   border-radius: 10px 0px;
-}
-.card-event-text {
-  max-width: 200px;
-  max-height: 150px;
 }
 .container-buttons {
   padding: 10px;
   text-align: center;
 }
 
-@media (max-width: 800px) {
-  main {
-    font-size: 10px;
-  }
-  .eventos {
-    margin: 0 auto;
-  }
-  .card-event {
-    display: flex;
-    margin: 10px;
-    border: 1px solid #ccc;
-    max-height: 100px;
-    max-width: 350px;
-  }
-  .card-event-img {
-    flex: 0 0 125px;
-    padding-right: 20px;
-  }
-  .card-event-text {
-    max-width: 300px;
-    max-height: 100px;
-  }
+/* Page publicize */
+
+.form-event {
+  display: flex;
+  flex-direction: column;
+}
+.event-data {
+  display: flex;
+  flex-direction: column;                                                                                                                                                                                                           ;
+  justify-content: center;
+  align-items: center;
+} 
+.publicize-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw;
+}
+.js-gender {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1vw;
+  border-radius: 15px;
+  background-color: #FFBD12;
+}
+.js-additional-infor {
+  justify-content: center;
+  resize: none;
+  padding: 1vw;
+  margin-bottom: 1vw;
+  border-radius: 15px;
+}
+.btn {
+  flex-direction: row;
+  justify-content: space-around;
 }
 
+@media screen and (max-width:1400px) {
+
+}
+
+@media screen and (max-width:768px) {
+  
+}

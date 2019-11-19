@@ -1,5 +1,4 @@
 import Button from "../components/button.js";
-
 function printEvent(post) {
   const eventList = document.querySelector(".eventos");
   const date = post
@@ -7,54 +6,57 @@ function printEvent(post) {
     .date
     .toDate()
     .toLocaleString("pt-BR");
+  const additional = post.data().additional;
+  const sport = post.data().sport;
   const event = post.data().event;
+  const gender = post.data().gender;
   const image = post.data().image;
   const address = post.data().address;
   const price = post.data().price;
 
   const template = `
-  
     <li class ='card-event'>
-        <figure class='card-event-img'>
+        <div class='card-event-img'>
             <img src= '${image}'/>
-        </figure>
-        <article class='card-event-text'>
+        </div>
+        <div class='card-event-text'>
         <p>
-            <strong>Evento:</strong> ${event} <br />
-            <strong>Data:</strong>${date} <br />
-            <strong>Localização:</strong> ${address} <br />
-            <strong>Valor:</strong> ${price}
+            Evento: ${event} <br />
+            Data: ${date} <br />
+            Modaliade: ${sport} <br />
+            Gênero: ${gender} <br />
+            Localização: ${address} <br />
+            Valor(es): ${price} <br />
+            Sobre o evento: ${additional}
         </p>
-        </article>
+        </div>
     </li>
-    
     `;
   eventList.innerHTML += template;
 }
-
 function loadEvent() {
   const postCollection = firebase.firestore().collection("events");
-  postCollection.orderBy('date', 'desc').get().then(snap => {
+  postCollection.orderBy('price', 'desc').get().then(snap => {
     snap.forEach(post => {
       printEvent(post);
     });
   });
 }
-
 function Publicize() {
   window.location.hash = '#publicize';
 }
-
 function News() {
   window.location.hash = '#news';
-
 }
 
+function Maps() {
+  window.location.hash = '#map';
+}
 function Events() {
   const template = `
     <div class='container-events'>
         <ul class="eventos"></ul>
-        <section class="container-buttons">
+        <div class="container-buttons">
         ${Button({
             id: "news",
             title: "Notícias",
@@ -65,7 +67,12 @@ function Events() {
             title: "Divulgue seu evento",
             onClick: Publicize
         })}
-        </section>
+        ${Button({
+            id: "map",
+            title: "Mapa",
+            onClick: Maps
+        })}
+        </div>
     </div>
     `;
   return template;
@@ -75,5 +82,4 @@ window.app = {
   loadEvent,
   printEvent
 };
-
 export default Events;
