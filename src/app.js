@@ -2,6 +2,7 @@ import Events from './pages/events.js';
 import Publicize from './pages/publicize.js';
 import News from './pages/news.js';
 
+
 function pageRoute() {
   const page = (window.location.hash) ? window.location.hash : '#events';
   switch (page) {
