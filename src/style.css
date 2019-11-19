@@ -4,16 +4,6 @@
   list-style: none;
   box-sizing: border-box;
 }
-footer{
-    background-color: rgb(207, 206, 205);
-    font-size: 14px;
-    text-align: center;
-    min-height: 5vh;
-    margin: 0;
-    padding-top: 4px;
-    width: 100%;
-    position: fixed;
-}
 .primary-button {
   background-color: #ffbd12;
   padding: 5px 15px;
@@ -53,7 +43,7 @@ footer{
 }
 .card-event-img img {
   max-width: 100%;
-  box-shadow: 0 0 5px #333;
+  box-shadow: 0 0 60px #FFBD12;
   border-radius: 10px 0px;
 }
 .card-event-text {
@@ -64,6 +54,7 @@ footer{
   padding: 10px;
   text-align: center;
 }
+
 @media (max-width: 800px) {
   main {
     font-size: 10px;
@@ -87,3 +78,4 @@ footer{
     max-height: 100px;
   }
 }
+
