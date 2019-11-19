@@ -15,16 +15,16 @@ function api() {
       document.querySelector('main').innerHTML = '';
       data.forEach(data => {
         let titleNews = data.title;
-        let shortDescriptionNews = data.short_description;
+        let link = data.link;
         let imgNews = data.image;
-        document.querySelector('main').innerHTML+= News(titleNews, shortDescriptionNews, imgNews)
+        document.querySelector('main').innerHTML+= News(titleNews, link, imgNews)
       });
     });
 };
 
 api();
 
-function News(titleNews, shortDescriptionNews, imgNews) {
+function News(titleNews, link, imgNews) {
   let template =  `
     <div class='container-events'>
       <ul class="eventos">
@@ -35,26 +35,30 @@ function News(titleNews, shortDescriptionNews, imgNews) {
           <article class='card-event-text'>
             <p>
               <strong>Titulo:</strong> ${titleNews} <br />
-              <strong>Notícia:</strong> ${shortDescriptionNews}
+              <a href="${link}" target="blank"><strong>Notícia</strong></a>
             </p>
           </article>
         </li>
       </ul>
-      <section class="container-buttons">
-        ${Button({
-          id: "events",
-          title: "Eventos",
-          onClick: backPage
-        })}
-        ${Button({
-          id: "publicize",
-          title: "Divulgue seu evento",
-          onClick: Publicize
-        })}
-      </section>
+    
     </div>
   `;
   return template;
 }
-
+const footerTemplate = document.querySelector('footer').innerHTML = `
+<footer>
+<section class="container-buttons">
+${Button({
+  id: "events",
+  title: "Eventos",
+  onClick: backPage
+})}
+${Button({
+  id: "publicize",
+  title: "Divulgue seu evento",
+  onClick: Publicize
+})}
+</section>
+</footer>
+`
 export default News;
