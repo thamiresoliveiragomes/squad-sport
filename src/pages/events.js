@@ -48,6 +48,10 @@ function Publicize() {
 function News() {
   window.location.hash = '#news';
 }
+
+function Maps() {
+  window.location.hash = '#map';
+}
 function Events() {
   const template = `
     <div class='container-events'>
@@ -64,10 +68,9 @@ function Events() {
             onClick: Publicize
         })}
         ${Button({
-            class: "js-genero",
-            id: "filter",
-            title: "Filtros"
-            // onClick: templateFilte
+            id: "map",
+            title: "Mapa",
+            onClick: Maps
         })}
         </div>
     </div>
