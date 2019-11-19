@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,31 +10,11 @@
     <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
     <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    
+
 </head>
 
 <body>
-    <h1>Squad Sport Localizacao</h1>
-        <form action="" id="form">
-            <input type="text" id="endereco">
-            <input type="submit">
-        </form>
-        <button id="user-location">Minha Localizacao </button>
-     <div style="width: 640px; height:480px" id="mapContainer"></div>
-
-    <script src="pages/map.js"></script>
-    <script>
-            const form = document.getElementById('form')
-            form.addEventListener("submit", function(event){
-                event.preventDefault();
-                const input = document.getElementById("endereco").value + " , Brazil"
-                geocodingParams = {searchText: input};
-                geocoder.geocode(geocodingParams, onResult);
-            });
-
-        </script>
     <main></main>
-   
         <script defer src="/__/firebase/7.4.0/firebase-app.js"></script>
         <script defer src="/__/firebase/7.4.0/firebase-database.js"></script>
         <script defer src="/__/firebase/7.4.0/firebase-storage.js"></script>
@@ -41,5 +22,5 @@
         <script defer src="/__/firebase/init.js"></script>
         <script type="module" src="./app.js"></script>
 </body>
-</html>
 
+</html>

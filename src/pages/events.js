@@ -3,9 +3,9 @@ function printEvent(post) {
   const eventList = document.querySelector(".eventos");
   const date = post
     .data()
-    .date;
-    // .toDate()
-    // .toLocaleString("pt-BR");
+    .date
+    .toDate()
+    .toLocaleString("pt-BR");
   const additional = post.data().additional;
   const sport = post.data().sport;
   const event = post.data().event;
@@ -36,7 +36,7 @@ function printEvent(post) {
 }
 function loadEvent() {
   const postCollection = firebase.firestore().collection("events");
-  postCollection.orderBy('date', 'desc').get().then(snap => {
+  postCollection.orderBy('price', 'desc').get().then(snap => {
     snap.forEach(post => {
       printEvent(post);
     });
@@ -47,6 +47,12 @@ function Publicize() {
 }
 function News() {
   window.location.hash = '#news';
+
+}
+
+function Maps() {
+  window.location.hash = '#map';
+
 }
 function Events() {
   const template = `
@@ -64,10 +70,9 @@ function Events() {
             onClick: Publicize
         })}
         ${Button({
-            class: "js-genero",
-            id: "filter",
-            title: "Filtros"
-            // onClick: templateFilter,
+            id: "map",
+            title: "Mapa",
+            onClick: Maps
         })}
         </div>
     </div>

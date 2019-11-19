@@ -7,31 +7,32 @@ function backPage() {
       window.location.hash = '#events';
 }
 }
+const name = document.querySelector('.js-name')
+const date = document.querySelector('.js-date-event')
+const hour = document.querySelector('.js-hour-event')
+const email = document.querySelector('.js-email')
+const sport = document.querySelector('.js-modality')
+const event = document.querySelector('.js-name-event')
+const gender = document.querySelector('.js-gender')
+const address = document.querySelector('.js-address')
+const price = document.querySelector('.js-price')
+const additional = document.querySelector('.js-additional-infor')
 
 function cleanPublicize(){
-  const name = document.querySelector('.js-name').value = '';
-  const date = document.querySelector('.js-date-event').value = '';
-  const hour = document.querySelector('.js-hour-event').value = '';
-  const email = document.querySelector('.js-email').value = '';
-  const sport = document.querySelector('.js-modality').value = '';
-  const event = document.querySelector('.js-name-event').value = '';
-  const gender = document.querySelector('.js-gender').value = '';
-  const address = document.querySelector('.js-address').value = '';
-  const price = document.querySelector('.js-price').value = '';
-  const additional = document.querySelector('.js-additional-infor').value = '';
+  name.value ='';
+   date.value='';
+   hour.value='';
+   email.value='';
+   sport.value='';
+   event.value='';
+   gender.value='';
+   address.value ='';
+   price.value='';
+   additional.value='';
 }
 
+
 function sendEvent(){
-  const name = document.querySelector('.js-name').value;
-  const date = document.querySelector('.js-date-event').value;
-  const hour = document.querySelector('.js-hour-event').value;
-  const email = document.querySelector('.js-email').value;
-  const sport = document.querySelector('.js-modality').value;
-  const event = document.querySelector('.js-name-event').value;
-  const gender = document.querySelector('.js-gender').value;
-  const address = document.querySelector('.js-address').value;
-  const price = document.querySelector('.js-price').value;
-  const additional = document.querySelector('.js-additional-infor').value;
   const events = {
     name,
     date,
