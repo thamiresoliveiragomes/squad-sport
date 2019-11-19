@@ -1,4 +1,5 @@
 import Button from "../components/button.js";
+
 function printEvent(post) {
   const eventList = document.querySelector(".eventos");
   const date = post
@@ -6,10 +7,7 @@ function printEvent(post) {
     .date
     .toDate()
     .toLocaleString("pt-BR");
-  const additional = post.data().additional;
-  const sport = post.data().sport;
   const event = post.data().event;
-  const gender = post.data().gender;
   const image = post.data().image;
   const address = post.data().address;
   const price = post.data().price;
@@ -22,7 +20,7 @@ function printEvent(post) {
         <article class='card-event-text'>
         <p>
             <strong>Evento:</strong> ${event} <br />
-            <strong>Data:</strong> ${date} <br />
+            <strong>Data:</strong>${date} <br />
             <strong>Localização:</strong> ${address} <br />
             <strong>Valor:</strong> ${price}
         </p>
@@ -31,6 +29,7 @@ function printEvent(post) {
     `;
   eventList.innerHTML += template;
 }
+
 function loadEvent() {
   const postCollection = firebase.firestore().collection("events");
   postCollection.orderBy('date', 'desc').get().then(snap => {
@@ -39,9 +38,11 @@ function loadEvent() {
     });
   });
 }
+
 function Publicize() {
   window.location.hash = '#publicize';
 }
+
 function News() {
   window.location.hash = '#news';
 
@@ -72,4 +73,5 @@ window.app = {
   loadEvent,
   printEvent
 };
+
 export default Events;
