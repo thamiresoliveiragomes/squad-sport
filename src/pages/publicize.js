@@ -7,32 +7,31 @@ function backPage() {
       window.location.hash = '#events';
 }
 }
-const name = document.querySelector('.js-name')
-const date = document.querySelector('.js-date-event')
-const hour = document.querySelector('.js-hour-event')
-const email = document.querySelector('.js-email')
-const sport = document.querySelector('.js-modality')
-const event = document.querySelector('.js-name-event')
-const gender = document.querySelector('.js-gender')
-const address = document.querySelector('.js-address')
-const price = document.querySelector('.js-price')
-const additional = document.querySelector('.js-additional-infor')
 
 function cleanPublicize(){
-  name.value ='';
-   date.value='';
-   hour.value='';
-   email.value='';
-   sport.value='';
-   event.value='';
-   gender.value='';
-   address.value ='';
-   price.value='';
-   additional.value='';
+  const name = document.querySelector('.js-name').valeu ='';
+    const date = document.querySelector('.js-date-event').valeu='';
+    const hour = document.querySelector('.js-hour-event').valeu='';
+    const email = document.querySelector('.js-email').valeu='';
+    const sport = document.querySelector('.js-modality').valeu='';
+    const event = document.querySelector('.js-name-event').valeu='';
+    const gender = document.querySelector('.js-gender').valeu='';
+    const address = document.querySelector('.js-address').valeu='';
+    const price = document.querySelector('.js-price').valeu='';
+    const additional = document.querySelector('.js-additional-infor').valeu='';
 }
-
-
-function sendEvent(){
+  
+  function sendEvent(){
+    const name = document.querySelector('.js-name').valeu;
+    const date = document.querySelector('.js-date-event').valeu;
+    const hour = document.querySelector('.js-hour-event').valeu;
+    const email = document.querySelector('.js-email').valeu;
+    const sport = document.querySelector('.js-modality').valeu;
+    const event = document.querySelector('.js-name-event').valeu;
+    const gender = document.querySelector('.js-gender').valeu;
+    const address = document.querySelector('.js-address').valeu;
+    const price = document.querySelector('.js-price').valeu;
+    const additional = document.querySelector('.js-additional-infor').valeu;
   const events = {
     name,
     date,
