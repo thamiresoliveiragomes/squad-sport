@@ -44,23 +44,6 @@ function News(titleNews, link, imgNews) {
   return template;
 }
 
-const footerTemplate = document.querySelector('footer').innerHTML = `
-<footer>
-<section class="container-buttons">
-${Button({
-  id: "events",
-  title: "Eventos",
-  onClick: backPage
-})}
-${Button({
-  id: "publicize",
-  title: "Divulgue seu evento",
-  onClick: Publicize
-})}
-</section>
-</footer>
-`
-
 window.news = {
   api
 };
