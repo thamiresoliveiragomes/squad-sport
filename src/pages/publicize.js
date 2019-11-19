@@ -2,48 +2,46 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function backPage() {
- let exit = confirm('Deseja sair?');
-    if (exit == true){
-      window.location.hash = '#events';
+  let exit = confirm('Deseja sair?');
+  if (exit == true) {
+    window.location.hash = '#events';
+  }
 }
-}
-const name = document.querySelector('.js-name')
-const date = document.querySelector('.js-date-event')
-const hour = document.querySelector('.js-hour-event')
-const email = document.querySelector('.js-email')
-const sport = document.querySelector('.js-modality')
-const event = document.querySelector('.js-name-event')
-const gender = document.querySelector('.js-gender')
-const address = document.querySelector('.js-address')
-const price = document.querySelector('.js-price')
-const additional = document.querySelector('.js-additional-infor')
-
-function cleanPublicize(){
-  name.value ='';
-   date.value='';
-   hour.value='';
-   email.value='';
-   sport.value='';
-   event.value='';
-   gender.value='';
-   address.value ='';
-   price.value='';
-   additional.value='';
+function cleanPublicize() {
+  document.querySelector('.js-name').value = '',
+  document.querySelector('.js-date-event').value = '',
+  document.querySelector('.js-date-event').value='',
+  document.querySelector('.js-email').value = '',
+  document.querySelector('.js-modality').value = '',
+  document.querySelector('.js-name-event').value = '',
+  document.querySelector('.js-gender').value = '',
+  document.querySelector('.js-address').value = '',
+  document.querySelector('.js-price').value = '',
+  document.querySelector('.js-additional-infor').value = ''
 }
 
-
-function sendEvent(){
+function sendEvent() {
+  const name = document.querySelector('.js-name').value;
+  const date = document.querySelector('.js-date-event').value;
+  const hours = document.querySelector('.js-hours-event').value;
+  const email = document.querySelector('.js-email').value;
+  const sport = document.querySelector('.js-modality').value;
+  const event = document.querySelector('.js-name-event').value;
+  const gender = document.querySelector('.js-gender').value;
+  const address = document.querySelector('.js-address').value;
+  const price = document.querySelector('.js-price').value;
+  const additional = document.querySelector('.js-additional-infor').value;
   const events = {
     name,
     date,
-    hour,
+    hours,
     email,
     sport,
     event,
     gender,
     address,
     price,
-    additional
+    additional,
   };
   firebase.firestore().collection('divulge').add(events);
   window.publicize.cleanPublicize()
@@ -51,6 +49,7 @@ function sendEvent(){
 
 function Publicize() {
   const template = `
+  <h2> Preencha os dados do seu evento aqui </h2>
   <form>
     ${Input({
     class: 'js-name',
@@ -74,8 +73,10 @@ function Publicize() {
   })}
   ${Input({
     class: 'js-price',
-    placeholder: 'Valor do Evento',
+    placeholder: 'Valor do Evento R$',
     type: 'number',
+    min: '0,00',
+    step: '0,01',
   })}
   <select class="js-gender" id="select">
   <option value="">Gênero</option>
@@ -91,10 +92,12 @@ function Publicize() {
   })}
   ${Input({
     class: 'js-date-event',
+    placeholder: 'Data do Evento',
     type: 'date',
   })}
   ${Input({
-    class: 'js-hour-event',
+    class: 'js-hours-event',
+    placeholder: 'Horario do Evento',
     type: 'time',
   })}
   <textarea rows='8'
@@ -103,7 +106,7 @@ function Publicize() {
   ${Button({
     id: 'publicize',
     title: 'Enviar',
-    onClick: sendEvent,
+    onClick: window.publicize.sendEvent,
   })}
   ${Button({
     id: 'backPage',
@@ -117,6 +120,7 @@ function Publicize() {
 
 window.publicize = {
   cleanPublicize,
+  sendEvent,
 }
 
 export default Publicize;

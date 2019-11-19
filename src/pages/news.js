@@ -1,8 +1,5 @@
 import Button from "../components/button.js";
-fetch('http://18.228.196.34/r7/mais-esportes')
-  .then(res => res.json())
-  .then(data => console.log(data));
-  
+
 function backPage() {
   window.location.hash = '#events';
 }
@@ -11,21 +8,57 @@ function Publicize() {
   window.location.hash = '#publicize';
 }
 
-function News() {
-  const template = `
-        ${Button({
-          id: "events",
-          title: "Eventos",
-          onClick: backPage
-        })}
-        ${Button({
-          id: "publicize",
-          title: "Divulgue seu evento",
-          onClick: Publicize
-        })}
-    `;
+function api() {
+  fetch("http://18.228.196.34/ge/futebol-americano")
+    .then(res => res.json())
+    .then(data => {
+      document.querySelector('main').innerHTML = '';
+      data.forEach(data => {
+        let titleNews = data.title;
+        let link = data.link;
+        let imgNews = data.image;
+        document.querySelector('main').innerHTML+= News(titleNews, link, imgNews)
+      });
+    });
+};
 
+api();
+
+function News(titleNews, link, imgNews) {
+  let template =  `
+    <div class='container-events'>
+      <ul class="eventos">
+        <li class ='card-event'>
+          <figure class='card-event-img'>
+              <img src= '${imgNews}'/>
+          </figure>
+          <article class='card-event-text'>
+            <p>
+              <strong>Titulo:</strong> ${titleNews} <br />
+              <a href="${link}" target="blank"><strong>Notícia</strong></a>
+            </p>
+          </article>
+        </li>
+      </ul>
+    
+    </div>
+  `;
   return template;
 }
-
+const footerTemplate = document.querySelector('footer').innerHTML = `
+<footer>
+<section class="container-buttons">
+${Button({
+  id: "events",
+  title: "Eventos",
+  onClick: backPage
+})}
+${Button({
+  id: "publicize",
+  title: "Divulgue seu evento",
+  onClick: Publicize
+})}
+</section>
+</footer>
+`
 export default News;
