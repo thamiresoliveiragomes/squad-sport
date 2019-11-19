@@ -73,8 +73,10 @@ function Publicize() {
   })}
   ${Input({
     class: 'js-price',
-    placeholder: 'Valor do Evento',
+    placeholder: 'Valor do Evento R$',
     type: 'number',
+    min: '0.01',
+    step: '0.01',
   })}
   <select class="js-gender" id="select">
   <option value="">Gênero</option>
@@ -90,11 +92,10 @@ function Publicize() {
   })}
   ${Input({
     class: 'js-date-event',
-    type: 'date',
-  })}
-  ${Input({
-    class: 'js-hour-event',
-    type: 'time',
+    pattern: '{2}\{2}\{4} {2}:{2}',
+    placeholder:'Ex.: 00/00/0000 00:00',
+    type: 'datetime-local',
+    min: '1',
   })}
   <textarea rows='8'
   cols='50' placeholder='Informações Complementares'
