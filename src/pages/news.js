@@ -22,8 +22,6 @@ function api() {
     });
 };
 
-api();
-
 function News(titleNews, link, imgNews) {
   let template =  `
     <div class='container-events'>
@@ -45,6 +43,7 @@ function News(titleNews, link, imgNews) {
   `;
   return template;
 }
+
 const footerTemplate = document.querySelector('footer').innerHTML = `
 <footer>
 <section class="container-buttons">
@@ -61,4 +60,9 @@ ${Button({
 </section>
 </footer>
 `
+
+window.news = {
+  api
+};
+
 export default News;

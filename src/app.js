@@ -15,6 +15,7 @@ function pageRoute() {
       break;
     case '#news':
       document.querySelector('main').innerHTML = News();
+      window.news.api();
       break;
     default:
     document.querySelector('main').innerHTML = Events();
