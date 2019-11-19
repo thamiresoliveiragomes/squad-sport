@@ -25,12 +25,12 @@ function News(data) {
       <ul class="eventos">
         <li class ='card-event'>
           <figure class='card-event-img'>
-              <img src= '${data.imgNews}'/>
+              // <img src= ''/>
           </figure>
           <article class='card-event-text'>
             <p>
-                Titulo: ${data.titleNews} <br />
-                Notícia: ${data.shortDescriptionNews}
+                Titulo: <br />
+                Notícia: 
             </p>
           </article>
         </li>
