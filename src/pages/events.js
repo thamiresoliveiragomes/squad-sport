@@ -16,10 +16,10 @@ function printEvent(post) {
 
   const template = `
     <li class ='card-event'>
-        <div class='card-event-img'>
+        <figure class='card-event-img'>
             <img src= '${image}'/>
-        </div>
-        <div class='card-event-text'>
+        </figure>
+        <article class='card-event-text'>
         <p>
             Evento: ${event} <br />
             Data: ${date} <br />
@@ -29,14 +29,14 @@ function printEvent(post) {
             Valor(es): ${price} <br />
             Sobre o evento: ${additional}
         </p>
-        </div>
+        </article>
     </li>
     `;
   eventList.innerHTML += template;
 }
 function loadEvent() {
   const postCollection = firebase.firestore().collection("events");
-  postCollection.orderBy('price', 'desc').get().then(snap => {
+  postCollection.orderBy('date', 'desc').get().then(snap => {
     snap.forEach(post => {
       printEvent(post);
     });
@@ -50,15 +50,11 @@ function News() {
 
 }
 
-function Maps() {
-  window.location.hash = '#map';
-
-}
 function Events() {
   const template = `
     <div class='container-events'>
         <ul class="eventos"></ul>
-        <div class="container-buttons">
+        <section class="container-buttons">
         ${Button({
             id: "news",
             title: "Notícias",
@@ -69,12 +65,7 @@ function Events() {
             title: "Divulgue seu evento",
             onClick: Publicize
         })}
-        ${Button({
-            id: "map",
-            title: "Mapa",
-            onClick: Maps
-        })}
-        </div>
+        </section>
     </div>
     `;
   return template;
