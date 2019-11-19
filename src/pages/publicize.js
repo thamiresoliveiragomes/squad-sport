@@ -21,7 +21,7 @@ function cleanPublicize(){
   const additional = document.querySelector('.js-additional-infor').value = '';
 }
 
-function send(){
+function sendEvent(){
   const name = document.querySelector('.js-name').value;
   const date = document.querySelector('.js-date-event').value;
   const hour = document.querySelector('.js-hour-event').value;
@@ -102,7 +102,7 @@ function Publicize() {
   ${Button({
     id: 'publicize',
     title: 'Enviar',
-    onClick: send,
+    onClick: sendEvent,
   })}
   ${Button({
     id: 'backPage',

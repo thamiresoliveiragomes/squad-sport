@@ -1,11 +1,11 @@
 import Button from "../components/button.js";
-
 function printEvent(post) {
   const eventList = document.querySelector(".eventos");
   const date = post
     .data()
-    .date.toDate()
-    .toLocaleString("pt-BR");
+    .date;
+    // .toDate()
+    // .toLocaleString("pt-BR");
   const additional = post.data().additional;
   const sport = post.data().sport;
   const event = post.data().event;
@@ -15,82 +15,68 @@ function printEvent(post) {
   const price = post.data().price;
 
   const template = `
-    <section class ='card-events'>
-    <img src= '${image}'/>
-    <p>
-    Evento: ${event}
-    </p>
-    <p>
-    Data: ${date}
-    </p>
-    <p>
-    Modaliade: ${sport} 
-    </p>
-    <p>
-    Gênero: ${gender}
-    </p>
-    <p>
-    Localização: ${address}
-    </p>
-    <p>
-    Valor(es): ${price}
-    </p>
-    <p>
-    Sobre o evento: ${additional}
-    </p>
-    </section>
-    `
-    
+    <li class ='card-event'>
+        <div class='card-event-img'>
+            <img src= '${image}'/>
+        </div>
+        <div class='card-event-text'>
+        <p>
+            Evento: ${event} <br />
+            Data: ${date} <br />
+            Modaliade: ${sport} <br />
+            Gênero: ${gender} <br />
+            Localização: ${address} <br />
+            Valor(es): ${price} <br />
+            Sobre o evento: ${additional}
+        </p>
+        </div>
+    </li>
+    `;
   eventList.innerHTML += template;
 }
-
 function loadEvent() {
   const postCollection = firebase.firestore().collection("events");
-  postCollection.get().then(snap => {
-      snap.forEach(post => {
+  postCollection.orderBy('date', 'desc').get().then(snap => {
+    snap.forEach(post => {
       printEvent(post);
     });
   });
 }
-
 function Publicize() {
-    window.location.hash = '#publicize';
+  window.location.hash = "#publicize";
 }
-
 function News() {
-    window.location.hash = '#news';
+  window.location.hash = "#news";
 }
-
 function Events() {
-    const template = `
+  const template = `
+    <div class='container-events'>
         <ul class="eventos"></ul>
-        ${Button({ 
-            id:'news',
-            title: 'Notícias',
-            onClick: News,
+        <div class="container-buttons">
+        ${Button({
+            id: "news",
+            title: "Notícias",
+            onClick: News
         })}
-        ${Button({ 
-            id:'publicize',
-            title: 'Divulgue seu evento',
-            onClick: Publicize,
+        ${Button({
+            id: "publicize",
+            title: "Divulgue seu evento",
+            onClick: Publicize
         })}
-        ${Button({ 
-          class: 'js-genero',
-          id:'filter',
-          title: 'Filtros',
-          // onClick: templateFilter,
+        ${Button({
+            class: "js-genero",
+            id: "filter",
+            title: "Filtros"
+            // onClick: templateFilter,
         })}
-        
+        </div>
+    </div>
     `;
-
-    return template;
+  return template;
 }
-
-
 
 window.app = {
   loadEvent,
   printEvent
 };
-
 export default Events;
