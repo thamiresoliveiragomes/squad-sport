@@ -22,7 +22,7 @@ function api() {
     });
 };
 
-api();
+// api();
 
 function News(titleNews, shortDescriptionNews, imgNews) {
   let template =  `
@@ -56,5 +56,9 @@ function News(titleNews, shortDescriptionNews, imgNews) {
   `;
   return template;
 }
+
+window.news = {
+  api
+};
 
 export default News;

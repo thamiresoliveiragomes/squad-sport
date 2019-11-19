@@ -7,10 +7,7 @@ function printEvent(post) {
     .date
     .toDate()
     .toLocaleString("pt-BR");
-  const additional = post.data().additional;
-  const sport = post.data().sport;
   const event = post.data().event;
-  const gender = post.data().gender;
   const image = post.data().image;
   const address = post.data().address;
   const price = post.data().price;
