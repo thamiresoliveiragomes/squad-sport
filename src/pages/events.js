@@ -1,10 +1,11 @@
 import Button from "../components/button.js";
 function printEvent(post) {
   const eventList = document.querySelector(".eventos");
-  const data = post
+  const date = post
     .data()
-    .data.toDate()
+    .date.toDate()
     .toLocaleString("pt-BR");
+<<<<<<< HEAD
   const descricao = post.data().descrição;
   const esporte = post.data().esporte;
   const evento = post.data().evento;
@@ -12,29 +13,43 @@ function printEvent(post) {
   const imagem = post.data().imagem;
   const localizacao = post.data().localização;
   const valor = post.data().valor;
+=======
+  const additional = post.data().additional;
+  const sport = post.data().sport;
+  const event = post.data().event;
+  const gender = post.data().gender;
+  const image = post.data().image;
+  const address = post.data().address;
+  const price = post.data().price;
+
+>>>>>>> 1c9f3a018e74261324044432e2c5e3ed905cd082
   const template = `
     <section class ='card-events'>
-    <img src= '${imagem}'/>
+    <img src= '${image}'/>
     <p>
-    Evento: ${evento}
+    Evento: ${event}
     </p>
     <p>
-    Data: ${data}
+    Data: ${date}
     </p>
     <p>
+<<<<<<< HEAD
     Modaliade: ${esporte}
+=======
+    Modaliade: ${sport} 
+>>>>>>> 1c9f3a018e74261324044432e2c5e3ed905cd082
     </p>
     <p>
-    Gênero: ${genero}
+    Gênero: ${gender}
     </p>
     <p>
-    Localização: ${localizacao}
+    Localização: ${address}
     </p>
     <p>
-    Valor(es): ${valor}
+    Valor(es): ${price}
     </p>
     <p>
-    Sobre o evento: ${descricao}
+    Sobre o evento: ${additional}
     </p>
     </section>
     `
@@ -67,9 +82,22 @@ function Events() {
             title: 'Divulgue seu evento',
             onClick: Publicize,
         })}
+        ${Button({ 
+          class: 'js-genero',
+          id:'filter',
+          title: 'Filtros',
+          // onClick: templateFilter,
+        })}
+        
     `;
     return template;
 }
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 1c9f3a018e74261324044432e2c5e3ed905cd082
 window.app = {
   loadEvent,
   printEvent
