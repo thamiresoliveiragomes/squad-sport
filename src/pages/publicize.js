@@ -3,22 +3,22 @@ import Input from '../components/input.js';
 
 function backPage() {
  let exit = confirm('Deseja sair?');
-    if (exit == true){
-      window.location.hash = '#events';
-}
+  if (exit == true){
+    window.location.hash = '#events';
+  }
 }
 
 function cleanPublicize() {
   document.querySelector('.js-name').value = '',
-    document.querySelector('.js-date-event').value = '',
-    document.querySelector('.js-date-event').value = '',
-    document.querySelector('.js-email').value = '',
-    document.querySelector('.js-modality').value = '',
-    document.querySelector('.js-name-event').value = '',
-    document.querySelector('.js-gender').value = '',
-    document.querySelector('.js-address').value = '',
-    document.querySelector('.js-price').value = '',
-    document.querySelector('.js-additional-infor').value = ''
+  document.querySelector('.js-date-event').value = '',
+  document.querySelector('.js-date-event').value = '',
+  document.querySelector('.js-email').value = '',
+  document.querySelector('.js-modality').value = '',
+  document.querySelector('.js-name-event').value = '',
+  document.querySelector('.js-gender').value = '',
+  document.querySelector('.js-address').value = '',
+  document.querySelector('.js-price').value = '',
+  document.querySelector('.js-additional-infor').value = ''
 }
 
 function sendEvent() {
@@ -96,66 +96,66 @@ function Publicize() {
       type: 'email',
       autocomplete: 'off',
     })}
-  ${Input({
-    class: 'js-modality',
-    placeholder: 'Qual o esporte',
-    type: 'txt',
-    autocomplete: 'off',
-  })}
     ${Input({
-    class: 'js-name-event',
-    placeholder: 'Nome do Evento',
-    type: 'text',
-    autocomplete: 'off',
-  })}
-  ${Input({
-    class: 'js-price',
-    placeholder: 'Valor do Evento R$',
-    type: 'number',
-    min: '0,00',
-    step: '0,00',
-    autocomplete: 'off',
-  })}
-  <select class="js-gender" id="select">
-  <option value="">Gênero</option>
-  <option value="Feminino">Feminino</option>
-  <option value="Masculino">Masculino</option>
-  <option value="Misto">Misto</option>
-  <option value="Outros">Outros</option>
-  </select>
-  ${Input({
-    class: 'js-address',
-    placeholder: 'Endereço',
-    type: 'text',
-    autocomplete: 'off',
-  })}
-  ${Input({
-    class: 'js-date-event',
-    placeholder: 'Data do Evento',
-    type: 'date',
-    autocomplete: 'off',
-  })}
-  ${Input({
-    class: 'js-hours-event',
-    placeholder: 'Horario do Evento',
-    type: 'time',
-    autocomplete: 'off',
-  })}
-  <textarea rows='8'
-  cols='50' placeholder='Informações Complementares'
-  class='js-additional-infor'> </textarea>
-  ${Button({
-    id: 'publicize',
-    title: 'Enviar',
-    onClick: window.publicize.sendEvent,
-  })}
-  ${Button({
-    id: 'backPage',
-    title: 'Voltar',
-    onClick: backPage,
-  })}
-  </section>
-  </form>`;
+      class: 'js-modality',
+      placeholder: 'Qual o esporte',
+      type: 'txt',
+      autocomplete: 'off',
+    })}
+      ${Input({
+      class: 'js-name-event',
+      placeholder: 'Nome do Evento',
+      type: 'text',
+      autocomplete: 'off',
+    })}
+    ${Input({
+      class: 'js-price',
+      placeholder: 'Valor do Evento R$',
+      type: 'number',
+      min: '0,00',
+      step: '0,00',
+      autocomplete: 'off',
+    })}
+    <select class="js-gender" id="select">
+    <option value="">Gênero</option>
+    <option value="Feminino">Feminino</option>
+    <option value="Masculino">Masculino</option>
+    <option value="Misto">Misto</option>
+    <option value="Outros">Outros</option>
+    </select>
+    ${Input({
+      class: 'js-address',
+      placeholder: 'Endereço',
+      type: 'text',
+      autocomplete: 'off',
+    })}
+    ${Input({
+      class: 'js-date-event',
+      placeholder: 'Data do Evento',
+      type: 'date',
+      autocomplete: 'off',
+    })}
+    ${Input({
+      class: 'js-hours-event',
+      placeholder: 'Horario do Evento',
+      type: 'time',
+      autocomplete: 'off',
+    })}
+    <textarea rows='8'
+    cols='50' placeholder='Informações Complementares'
+    class='js-additional-infor'> </textarea>
+    ${Button({
+      id: 'publicize',
+      title: 'Enviar',
+      onClick: window.publicize.sendEvent,
+    })}
+    ${Button({
+      id: 'backPage',
+      title: 'Voltar',
+      onClick: backPage,
+    })}
+    </form>
+  </section>`;
 
   return template;
 }
