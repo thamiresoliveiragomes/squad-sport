@@ -93,93 +93,63 @@ function Maps() {
 }
 function Events() {
   const template = `
-  <div id="content">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        ${Button({id: "sidebarCollapse", class: "btn btn-info", title:"Filtrar", icone: "fas fa-align-left", onClick: activeFilter})}
-      </div>
-  </nav>
-</div>
+    <div class="wrapper">
+      <nav id="sidebar" class="active">
+        <ul class="list-unstyled components">
+          <li>${Button({class: "link", title: "Eventos Gratuitos", onClick: freeEvents,})}</li>
+          <li>
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle link">Esportes</a>
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li>${Button({class: "link", title: "Basquete", onClick: filterSports})}</li>
+              <li>${Button({class: "link", title: "Corrida", onClick: filterSports})}</li>
+              <li>${Button({class: "link", title: "Handebol", onClick: filterSports})}</li>
+              <li>${Button({class: "link", title: "MMA", onClick: filterSports})}</li>
+              <li>${Button({class: "link", title: "Natação", onClick: filterSports})}</li>
+              <li>${Button({class: "link", title: "Skate", onClick: filterSports})}</li>
+              <li>${Button({class: "link", title: "Volêi", onClick: filterSports})}</li>
+              <li>${Button({class: "link", title: "Zumba", onClick: filterSports})}</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle link">Gênero</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+              <li>${Button({class: "link", title: "Feminino", onClick: filterGender})}</li>
+              <li>${Button({class: "link", title: "Masculino", onClick: filterGender})}</li>
+              <li>${Button({class: "link", title: "Misto", onClick: filterGender})}</li>
+            </ul>
+          </li>
+          <li dropdown-toggle>${Button({class: "link", title: "Ver todos os eventos", onClick: window.app.loadEvent})}</li>
+        </ul>
+      </nav>
 
-  <div class="wrapper">
-  <!-- Sidebar -->
-  <nav id="sidebar" class="active">
-      <ul class="list-unstyled components">
-        <li>
-        ${Button({class: "link", title: "Eventos Gratuitos", onClick: freeEvents,})}
-        </li>
-          <li>
-              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle link">Esportes</a>
-              <ul class="collapse list-unstyled" id="homeSubmenu">
-                  <li>
-                    ${Button({class: "link", title: "Basquete", onClick: filterSports})}
-                  </li>
-                  <li>
-                    ${Button({class: "link", title: "Corrida", onClick: filterSports})}
-                  </li>
-                  <li>
-                    ${Button({class: "link", title: "Handebol", onClick: filterSports})}
-                  </li>
-                  <li>
-                    ${Button({class: "link", title: "MMA", onClick: filterSports})}
-                  </li>
-                  <li>
-                    ${Button({class: "link", title: "Natação", onClick: filterSports})}
-                  </li>
-                  <li>
-                    ${Button({class: "link", title: "Skate", onClick: filterSports})}
-                  </li>
-                  <li>
-                    ${Button({class: "link", title: "Volêi", onClick: filterSports})}
-                  </li>
-                  <li>
-                    ${Button({class: "link", title: "Zumba", onClick: filterSports})}
-                  </li>
-              </ul>
-          </li>
-          <li>
-              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle link">Gênero</a>
-              <ul class="collapse list-unstyled" id="pageSubmenu">
-                  <li>
-                  ${Button({class: "link", title: "Feminino", onClick: filterGender})}
-                  </li>
-                  <li>
-                  ${Button({class: "link", title: "Masculino", onClick: filterGender})}
-                  </li>
-                  <li>
-                  ${Button({class: "link", title: "Misto", onClick: filterGender})}
-                  </li>
-              </ul>
-          </li>
-          <li>
-          ${Button({class: "link", title: "Ver todos os eventos", onClick: window.app.loadEvent})}
-          </li>
-      </ul>
-  </nav>
-
-</div>
-<section id="content">
-    <div class='container-events'>
-        <ul class="eventos"></ul>
-        <div class="container-buttons">
-        ${Button({
-            id: "news",
-            title: "Notícias",
-            onClick: News
-        })}
-        ${Button({
-            id: "publicize",
-            title: "Divulgue seu evento",
-            onClick: Publicize
-        })}
-        ${Button({
-            id: "map",
-            title: "Mapa",
-            onClick: Maps
-        })}
+      <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+          ${Button({id: "sidebarCollapse", title:"Filtrar", icone: "fas fa-filter", onClick: activeFilter})}
+          </div>
+        </nav>
+        <div class='container-events'>
+          <ul class="eventos"></ul>
+          <div class="container-buttons">
+            ${Button({
+              id: "news",
+              title: "Notícias",
+              onClick: News
+            })}
+            ${Button({
+              id: "publicize",
+              title: "Divulgue seu evento",
+              onClick: Publicize
+            })}
+            ${Button({
+              id: "map",
+              title: "Mapa",
+              onClick: Maps
+            })}
+          </div>
         </div>
+      </div>
     </div>
-    </section>
     `;
   return template;
 }
