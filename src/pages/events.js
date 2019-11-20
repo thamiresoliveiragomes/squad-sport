@@ -157,7 +157,6 @@ function Events() {
       </ul>
   </nav>
 
-</div>
 <section id="content">
     <div class='container-events'>
         <ul class="eventos"></ul>
@@ -180,6 +179,7 @@ function Events() {
         </div>
     </div>
     </section>
+    </div>
     `;
   return template;
 }
