@@ -9,7 +9,6 @@ function Publicize() {
 }
 
 function api() {
-  console.log('teste')
   fetch("http://18.228.196.34/ge/futebol-americano")
     .then(res => res.json())
     .then(data => {
@@ -18,27 +17,42 @@ function api() {
         let titleNews = data.title;
         let link = data.link;
         let imgNews = data.image;
-        document.querySelector('main').innerHTML+= News(titleNews, link, imgNews)
+        document.querySelector('main').innerHTML += News(titleNews, link, imgNews)
       });
     });
 };
 
-function News() {
-  const template = `
-        ${Button({
-          id: "events",
-          title: "Eventos",
-          onClick: backPage
-        })}
-        ${Button({
-          id: "publicize",
-          title: "Divulgue seu evento",
-          onClick: Publicize
-        })}
-    `;
-
-  return template;
+function News(titleNews, link, imgNews) {
+  let template =  `
+  <div class='container-events'>
+    <ul class="eventos">
+      <li class ='card-event'>
+        <figure class='card-event-img'>
+            <img src= '${imgNews}'/>
+        </figure>
+        <article class='card-event-text'>
+          <p>
+            <strong>Titulo:</strong> ${titleNews} <br />
+            <a href="${link}" target="blank"><strong>Notícia</strong></a>
+          </p>
+        </article>
+      </li>
+    </ul>
+  </div>
+  ${Button({
+    id: "events",
+    title: "Eventos",
+    onClick: backPage
+  })}
+  ${Button({
+    id: "publicize",
+    title: "Divulgue seu evento",
+    onClick: Publicize
+  })}
+`;
+return template;
 }
+        
 
 window.news = {
   api

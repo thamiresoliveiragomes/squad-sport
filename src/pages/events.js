@@ -1,6 +1,5 @@
 import Button from "../components/button.js";
 
-
 function activeFilter(){
   document.querySelector('#sidebar').classList.toggle('active')
 }
@@ -10,7 +9,6 @@ function freeEvents() {
   firebase.firestore().collection('events').where('price', '==', 'Gratuito').get()
   .then((querySnapshot) => {
     querySnapshot.forEach((post) => {
-      console.log(post)
       window.app.printEvent(post);
     });
   });
@@ -36,7 +34,6 @@ function filterGender(gender) {
   });
 }
 
-
 function printEvent(post) {
   const eventList = document.querySelector(".eventos");
   const date = post
@@ -44,7 +41,6 @@ function printEvent(post) {
     .date
     .toDate()
     .toLocaleString("pt-BR");
-  const additional = post.data().additional;
   const sport = post.data().sport;
   const event = post.data().event;
   const gender = post.data().gender;
@@ -54,24 +50,24 @@ function printEvent(post) {
 
   const template = `
     <li class ='card-event'>
-        <div class='card-event-img'>
-            <img src= '${image}'/>
-        </div>
-        <div class='card-event-text'>
+      <div class='card-event-img'>
+        <img src= '${image}'/>
+      </div>
+      <div class='card-event-text'>
         <p>
-            Evento: ${event} <br />
-            Data: ${date} <br />
-            Modaliade: ${sport} <br />
-            Gênero: ${gender} <br />
-            Localização: ${address} <br />
-            Valor(es): ${price} <br />
-            Sobre o evento: ${additional}
+          <strong>Evento:</strong> ${event} <br />
+          <strong>Data:</strong> ${date} <br />
+          <strong>Modaliade:</strong> ${sport} <br />
+          <strong>Gênero:</strong> ${gender} <br />
+          <strong>Localização:</strong> ${address} <br />
+          <strong>Valor:</strong> ${price} <br />
         </p>
-        </div>
+      </div>
     </li>
     `;
   eventList.innerHTML += template;
 }
+
 function loadEvent() {
   document.querySelector('.eventos').innerHTML ='';
   const postCollection = firebase.firestore().collection('events');
@@ -81,9 +77,11 @@ function loadEvent() {
     });
   });
 }
+
 function Publicize() {
   window.location.hash = '#publicize';
 }
+
 function News() {
   window.location.hash = '#news';
 }
@@ -91,6 +89,7 @@ function News() {
 function Maps() {
   window.location.hash = '#map';
 }
+
 function Events() {
   const template = `
     <div class="wrapper">
@@ -151,6 +150,7 @@ function Events() {
       </div>
     </div>
     `;
+
   return template;
 }
 
