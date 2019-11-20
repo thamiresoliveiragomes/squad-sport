@@ -9,7 +9,7 @@ function Button(props) {
     </button>
   `;
   return template;
-}
+};
 
 window.button = {
   handleClick: (event, callback) => {
