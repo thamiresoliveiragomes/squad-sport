@@ -2,11 +2,11 @@ import Button from "../components/button.js";
   
 function backPage() {
   window.location.hash = '#events';
-}
+};
 
 function Publicize() {
   window.location.hash = '#publicize';
-}
+};
 
 function api() {
   fetch("http://18.228.196.34/ge/futebol-americano")
@@ -28,7 +28,7 @@ function News(titleNews, link, imgNews) {
     <ul class="eventos">
       <li class ='card-event'>
         <figure class='card-event-img'>
-            <img src= '${imgNews}'/>
+          <img src= '${imgNews}'/>
         </figure>
         <article class='card-event-text'>
           <p>
@@ -39,24 +39,23 @@ function News(titleNews, link, imgNews) {
       </li>
     </ul>
   </div>
-  ${Button({
-    id: "events",
-    title: "Eventos",
-    onClick: backPage
-  })}
-  ${Button({
-    id: "publicize",
-    title: "Divulgue seu evento",
-    onClick: Publicize
-  })}
-`;
-return template;
-}
+  <div class="container-buttons">
+    ${Button({
+      id: "events",
+      title: "Eventos",
+      onClick: backPage
+    })}
+    ${Button({
+      id: "publicize",
+      title: "Divulgue seu evento",
+      onClick: Publicize
+    })}
+  </div>`
+  return template;
+};
         
-
 window.news = {
   api
 };
 
 export default News;
-

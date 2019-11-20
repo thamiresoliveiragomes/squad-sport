@@ -12,7 +12,7 @@ function freeEvents() {
       window.app.printEvent(post);
     });
   });
-}
+};
 
 function filterSports(sport) {
   document.querySelector('.eventos').innerHTML ='';
@@ -22,7 +22,7 @@ function filterSports(sport) {
       window.app.printEvent(post);
     });
   });
-}
+};
 
 function filterGender(gender) {
   document.querySelector('.eventos').innerHTML ='';
@@ -32,7 +32,7 @@ function filterGender(gender) {
       window.app.printEvent(post);
     });
   });
-}
+};
 
 function printEvent(post) {
   const eventList = document.querySelector(".eventos");
@@ -41,9 +41,7 @@ function printEvent(post) {
     .date
     .toDate()
     .toLocaleString("pt-BR");
-  const sport = post.data().sport;
   const event = post.data().event;
-  const gender = post.data().gender;
   const image = post.data().image;
   const address = post.data().address;
   const price = post.data().price;
@@ -57,16 +55,14 @@ function printEvent(post) {
         <p>
           <strong>Evento:</strong> ${event} <br />
           <strong>Data:</strong> ${date} <br />
-          <strong>Modaliade:</strong> ${sport} <br />
-          <strong>Gênero:</strong> ${gender} <br />
           <strong>Localização:</strong> ${address} <br />
           <strong>Valor:</strong> ${price} <br />
         </p>
       </div>
     </li>
-    `;
+  `;
   eventList.innerHTML += template;
-}
+};
 
 function loadEvent() {
   document.querySelector('.eventos').innerHTML ='';
@@ -76,19 +72,15 @@ function loadEvent() {
       window.app.printEvent(post);
     });
   });
-}
+};
 
 function Publicize() {
   window.location.hash = '#publicize';
-}
+};
 
 function News() {
   window.location.hash = '#news';
-}
-
-function Maps() {
-  window.location.hash = '#map';
-}
+};
 
 function Events() {
   const template = `
@@ -120,11 +112,10 @@ function Events() {
           <li dropdown-toggle>${Button({class: "link", title: "Ver todos os eventos", onClick: window.app.loadEvent})}</li>
         </ul>
       </nav>
-
       <div id="content">
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container-fluid">
-          ${Button({id: "sidebarCollapse", title:"Filtrar", icone: "fas fa-filter", onClick: activeFilter})}
+            ${Button({id: "sidebarCollapse", title:"Filtrar", icone: "fas fa-filter", onClick: activeFilter})}
           </div>
         </nav>
         <div class='container-events'>
@@ -140,19 +131,14 @@ function Events() {
               title: "Divulgue seu evento",
               onClick: Publicize
             })}
-            ${Button({
-              id: "map",
-              title: "Mapa",
-              onClick: Maps
-            })}
           </div>
         </div>
       </div>
     </div>
-    `;
+  `;
 
   return template;
-}
+};
 
 window.app = {
   loadEvent,

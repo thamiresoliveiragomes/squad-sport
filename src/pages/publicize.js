@@ -5,8 +5,8 @@ function backPage() {
  let exit = confirm('Deseja sair?');
   if (exit == true){
     window.location.hash = '#events';
-  }
-}
+  };
+};
 
 function cleanPublicize() {
   document.querySelector('.js-name').value = '',
@@ -19,7 +19,7 @@ function cleanPublicize() {
   document.querySelector('.js-address').value = '',
   document.querySelector('.js-price').value = '',
   document.querySelector('.js-additional-infor').value = ''
-}
+};
 
 function sendEvent() {
   const name = document.querySelector('.js-name').value;
@@ -76,89 +76,91 @@ function sendEvent() {
     firebase.firestore().collection('divulge').add(events);
     alert('Obrigado !! Vamos validar os seus dados em Breve seu evento vai ser divulgado')
     window.publicize.cleanPublicize()
-  }
-}
+  };
+};
 
 function Publicize() {
   const template = `
   <main class="publicize-main"></main>
   <section class="form-event">
     <form class="event-data">
-    ${Input({
-      class: 'js-name',
-      placeholder: 'Nome',
-      type: 'text',
-      autocomplete: 'off',
-    })}
       ${Input({
-      class: 'js-email',
-      placeholder: 'exemplo@exemplo.com.br',
-      type: 'email',
-      autocomplete: 'off',
-    })}
-    ${Input({
-      class: 'js-modality',
-      placeholder: 'Qual o esporte',
-      type: 'txt',
-      autocomplete: 'off',
-    })}
+        class: 'js-name',
+        placeholder: 'Nome',
+        type: 'text',
+        autocomplete: 'off',
+      })}
+        ${Input({
+        class: 'js-email',
+        placeholder: 'exemplo@exemplo.com.br',
+        type: 'email',
+        autocomplete: 'off',
+      })}
       ${Input({
-      class: 'js-name-event',
-      placeholder: 'Nome do Evento',
-      type: 'text',
-      autocomplete: 'off',
-    })}
-    ${Input({
-      class: 'js-price',
-      placeholder: 'Valor do Evento R$',
-      type: 'number',
-      min: '0,00',
-      step: '0,00',
-      autocomplete: 'off',
-    })}
-    <select class="js-gender" id="select">
-    <option value="">Gênero</option>
-    <option value="Feminino">Feminino</option>
-    <option value="Masculino">Masculino</option>
-    <option value="Misto">Misto</option>
-    <option value="Outros">Outros</option>
-    </select>
-    ${Input({
-      class: 'js-address',
-      placeholder: 'Endereço',
-      type: 'text',
-      autocomplete: 'off',
-    })}
-    ${Input({
-      class: 'js-date-event',
-      placeholder: 'Data do Evento',
-      type: 'date',
-      autocomplete: 'off',
-    })}
-    ${Input({
-      class: 'js-hours-event',
-      placeholder: 'Horario do Evento',
-      type: 'time',
-      autocomplete: 'off',
-    })}
-    <textarea rows='8'
-    cols='50' placeholder='Informações Complementares'
-    class='js-additional-infor'> </textarea>
-    ${Button({
-      id: 'publicize',
-      title: 'Enviar',
-      onClick: window.publicize.sendEvent,
-    })}
-    ${Button({
-      id: 'backPage',
-      title: 'Voltar',
-      onClick: backPage,
-    })}
+        class: 'js-modality',
+        placeholder: 'Qual o esporte',
+        type: 'txt',
+        autocomplete: 'off',
+      })}
+        ${Input({
+        class: 'js-name-event',
+        placeholder: 'Nome do Evento',
+        type: 'text',
+        autocomplete: 'off',
+      })}
+      ${Input({
+        class: 'js-price',
+        placeholder: 'Valor do Evento R$',
+        type: 'number',
+        min: '0,00',
+        step: '0,00',
+        autocomplete: 'off',
+      })}
+      <select class="js-gender" id="select">
+      <option value="">Gênero</option>
+      <option value="Feminino">Feminino</option>
+      <option value="Masculino">Masculino</option>
+      <option value="Misto">Misto</option>
+      <option value="Outros">Outros</option>
+      </select>
+      ${Input({
+        class: 'js-address',
+        placeholder: 'Endereço',
+        type: 'text',
+        autocomplete: 'off',
+      })}
+      ${Input({
+        class: 'js-date-event',
+        placeholder: 'Data do Evento',
+        type: 'date',
+        autocomplete: 'off',
+      })}
+      ${Input({
+        class: 'js-hours-event',
+        placeholder: 'Horario do Evento',
+        type: 'time',
+        autocomplete: 'off',
+      })}
+      <textarea rows='8'
+      cols='50' placeholder='Informações Complementares'
+      class='js-additional-infor'> </textarea>
+      <div class="container-buttons">
+        ${Button({
+          id: 'publicize',
+          title: 'Enviar',
+          onClick: window.publicize.sendEvent,
+        })}
+        ${Button({
+          id: 'backPage',
+          title: 'Voltar',
+          onClick: backPage,
+        })}
+      </div>
     </form>
   </section>`;
 
   return template;
-}
+};
 
 window.publicize = {
   cleanPublicize,
