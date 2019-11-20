@@ -2,10 +2,10 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function backPage() {
-  let exit = confirm('Deseja sair?');
-  if (exit == true) {
-    window.location.hash = '#events';
-  }
+ let exit = confirm('Deseja sair?');
+    if (exit == true){
+      window.location.hash = '#events';
+}
 }
 
 function cleanPublicize() {
@@ -81,20 +81,21 @@ function sendEvent() {
 
 function Publicize() {
   const template = `
-  <h2> Preencha os dados do seu evento aqui </h2>
-  <form>
+  <main class="publicize-main"></main>
+  <section class="form-event">
+    <form class="event-data">
     ${Input({
-    class: 'js-name',
-    placeholder: 'Nome',
-    type: 'text',
-    autocomplete: 'off',
-  })}
-    ${Input({
-    class: 'js-email',
-    placeholder: 'exemplo@exemplo.com.br',
-    type: 'email',
-    autocomplete: 'off',
-  })}
+      class: 'js-name',
+      placeholder: 'Nome',
+      type: 'text',
+      autocomplete: 'off',
+    })}
+      ${Input({
+      class: 'js-email',
+      placeholder: 'exemplo@exemplo.com.br',
+      type: 'email',
+      autocomplete: 'off',
+    })}
   ${Input({
     class: 'js-modality',
     placeholder: 'Qual o esporte',
@@ -153,6 +154,7 @@ function Publicize() {
     title: 'Voltar',
     onClick: backPage,
   })}
+  </section>
   </form>`;
 
   return template;
@@ -160,7 +162,7 @@ function Publicize() {
 
 window.publicize = {
   cleanPublicize,
-  sendEvent,
-}
+  sendEvent
+};
 
 export default Publicize;
