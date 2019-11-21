@@ -144,18 +144,6 @@ function Publicize() {
       <textarea rows='8'
       cols='50' placeholder='Informações Complementares'
       class='js-additional-infor'> </textarea>
-      <div class="container-buttons">
-        ${Button({
-          id: 'publicize',
-          title: 'Enviar',
-          onClick: window.publicize.sendEvent,
-        })}
-        ${Button({
-          id: 'backPage',
-          title: 'Voltar',
-          onClick: backPage,
-        })}
-      </div>
     </form>
   </section>`;
 
