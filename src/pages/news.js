@@ -28,6 +28,7 @@ function api() {
             <a href="${link}" target="blank"><strong>Notícia</strong></a>
             </p>
         </article>
+
         </li>
         `;
         document.querySelector('.eventos').innerHTML += template
@@ -53,6 +54,11 @@ function News() {
     <ul class="eventos">
     </ul>
   </div>`
+      </li>
+    </ul>
+  </div>
+`
+
   return template;
 
 };
