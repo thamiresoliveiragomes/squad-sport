@@ -39,19 +39,7 @@ function News(titleNews, link, imgNews) {
       </li>
     </ul>
   </div>
-  <div class="container-buttons">
-  ${Button({
-    id: 'events',
-    title: 'Eventos',
-    onClick: backPage,
-  })}
-  ${Button({
-    id: 'publicize',
-    title: 'Divulgue seu evento',
-    onClick: Publicize,
-  })}
-
-  </div>`
+`
   return template;
 };
         

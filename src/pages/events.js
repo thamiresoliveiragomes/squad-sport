@@ -120,17 +120,6 @@ function Events() {
         </nav>
         <div class='container-events'>
           <ul class="eventos"></ul>
-          <div class="container-buttons">
-            ${Button({
-              id: "news",
-              title: "Notícias",
-              onClick: News
-            })}
-            ${Button({
-              id: "publicize",
-              title: "Divulgue seu evento",
-              onClick: Publicize
-            })}
           </div>
         </div>
       </div>
