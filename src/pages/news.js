@@ -50,6 +50,7 @@ function News(titleNews, link, imgNews) {
     title: 'Divulgue seu evento',
     onClick: Publicize,
   })}
+
   </div>`
   return template;
 };

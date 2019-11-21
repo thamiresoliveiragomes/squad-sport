@@ -1,4 +1,7 @@
+
 /* Versão web*/
+
+
 
 * {
   margin: 0;
@@ -6,14 +9,23 @@
   list-style: none;
 }
 
+
 html,body {
   margin: 0;
   padding: 0;
   
 }
 
+
 .banner{
   justify-content: center;
+}
+
+.img-logo{
+
+  justify-content: center;
+  width: 100%;
+  height: 250px;
 }
 
 .img-logo{
@@ -23,6 +35,7 @@ html,body {
   display: block;
   /*flex-wrap: wrap;*/
 }
+
 
 
 .primary-button {
@@ -50,7 +63,6 @@ html,body {
   justify-content: center;
 }
 
-
 .card-event {
   display: flex;
   margin: 10px;
@@ -58,7 +70,6 @@ html,body {
   height: 115px;
   width: 340px;
   background-color: #FFBD12;
-  
 }
 
 .card-event-img {
@@ -86,9 +97,14 @@ html,body {
   justify-content: flex-end; 
 }
 
+.eventos {
+  justify-content: center; 
+}
+
 .container-buttons {
   padding: 10px;
   text-align: center;
+
   font-family: 'Rubik', sans-serif;
 }
 
@@ -112,10 +128,15 @@ a, a:hover, a:focus {
 }
 
 #sidebar ul.components {
+
   padding: 12px 0;
   margin: 37px;
   border-bottom: 1px solid #FFBD12;
   font-family: 'Rubik', sans-serif;
+
+  padding: 20px 0;
+  border-bottom: 1px solid #47748b;
+
 }
 
 #sidebar ul p {
@@ -244,3 +265,10 @@ a[data-toggle="collapse"] {
   
  
 } 
+
+/* Para fazer versao WEB
+
+/* @media (min-width: 800px) {
+ 
+} */
+

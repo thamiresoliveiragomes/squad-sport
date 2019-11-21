@@ -8,6 +8,6 @@ function Input(props) {
   `;
   
   return template;
-}
+};
   
 export default Input;
