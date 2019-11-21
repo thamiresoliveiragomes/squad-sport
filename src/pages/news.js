@@ -24,7 +24,7 @@ function api() {
         </figure>
         <article class='card-event-text'>
           <p>
-            <strong>Titulo:</strong> ${titleNews} <br />
+            <strong>Titulo:</strong> ${titleNews} <br/>
             <a href="${link}" target="blank"><strong>Notícia</strong></a>
             </p>
         </article>
