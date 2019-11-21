@@ -32,7 +32,7 @@ function News(titleNews, link, imgNews) {
         </figure>
         <article class='card-event-text'>
           <p>
-            <strong>Titulo:</strong> ${titleNews} <br />
+            <strong>Titulo:</strong> ${titleNews} <br/>
             <a href="${link}" target="blank"><strong>Notícia</strong></a>
           </p>
         </article>
@@ -40,16 +40,17 @@ function News(titleNews, link, imgNews) {
     </ul>
   </div>
   <div class="container-buttons">
-    ${Button({
-      id: "events",
-      title: "Eventos",
-      onClick: backPage
-    })}
-    ${Button({
-      id: "publicize",
-      title: "Divulgue seu evento",
-      onClick: Publicize
-    })}
+  ${Button({
+    id: 'events',
+    title: 'Eventos',
+    onClick: backPage,
+  })}
+  ${Button({
+    id: 'publicize',
+    title: 'Divulgue seu evento',
+    onClick: Publicize,
+  })}
+
   </div>`
   return template;
 };
