@@ -114,9 +114,6 @@ function Events() {
       <div class='container-events'>
         <ul class="eventos"></ul>
       </div>
-      <div>
-        <a href="#" class="Begin">🔝</a>
-      </div>
     </div>
   `;
 

@@ -8,20 +8,17 @@ function api() {
         let link = data.link;
         let imgNews = data.image;
         const template = `
-        <li class ='card-event'>
-          <figure class='card-event-img'>
-            <img src= '${imgNews}'/>
-          </figure>
-          <article class='card-event-text'>
-            <p>
-              <strong>Titulo:</strong> ${titleNews} <br/>
-              <a href="${link}" target="blank"><strong>Notícia</strong></a>
-            </p>
-          </article>
-        </li>
-        <div>
-          <a href="#" class="Begin">🔝</a>
-        </div>
+          <li class ='card-event'>
+            <figure class='card-event-img'>
+              <img src= '${imgNews}'/>
+            </figure>
+            <article class='card-event-text'>
+              <p>
+                <strong>Titulo:</strong> ${titleNews} <br/>
+                <a href="${link}" target="blank"><strong>Notícia</strong></a>
+              </p>
+            </article>
+          </li>
         `;
         document.querySelector('.eventos').innerHTML += template
       });
