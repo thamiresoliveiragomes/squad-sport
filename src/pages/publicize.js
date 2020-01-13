@@ -49,7 +49,7 @@ function sendEvent() {
     alert('Preencha o campo com a categoria do esporte');
   }
   else if (event == '') {
-    alert('Preencha o campo com o nome do Evento');
+    alert('Preencha o campo com o nome do evento');
   }
   else if (gender == '') {
     alert('Preencha o campo com o gênero do evento');
@@ -74,7 +74,7 @@ function sendEvent() {
       additional,
     };
     firebase.firestore().collection('divulge').add(events);
-    alert('Obrigado !! Vamos validar os seus dados em Breve seu evento vai ser divulgado')
+    alert('Obrigado! Em breve seu evento será divulgado!')
     window.publicize.cleanPublicize()
   };
 };
@@ -117,11 +117,11 @@ function Publicize() {
         autocomplete: 'off',
       })}
       <select class="js-gender" id="select">
-      <option value="">Gênero</option>
-      <option value="Feminino">Feminino</option>
-      <option value="Masculino">Masculino</option>
-      <option value="Misto">Misto</option>
-      <option value="Outros">Outros</option>
+        <option value="">Gênero</option>
+        <option value="Feminino">Feminino</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Misto">Misto</option>
+        <option value="Outros">Outros</option>
       </select>
       ${Input({
         class: 'js-address',
@@ -141,24 +141,23 @@ function Publicize() {
         type: 'time',
         autocomplete: 'off',
       })}
-      <textarea rows='8'
-      cols='50' placeholder='Informações Complementares'
-      class='js-additional-infor'> </textarea>
+      <textarea 
+       rows='8'cols='50' placeholder='Informações Complementares'class='js-additional-infor'> 
+      </textarea>
       <div class="btn">
-      ${Button({
-        id: 'publicize',
-        title: 'Enviar',
-        onClick: sendEvent,
-      })}
-      ${Button({
-        id: 'backPage',
-        title: 'Voltar',
-        onClick: backPage,
-      })}
+        ${Button({
+          id: 'publicize',
+          title: 'Enviar',
+          onClick: sendEvent,
+        })}
+        ${Button({
+          id: 'backPage',
+          title: 'Voltar',
+          onClick: backPage,
+        })}
       </div>
     </form>
   </section>`;
-
 
   return template;
 };
