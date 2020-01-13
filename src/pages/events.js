@@ -73,19 +73,21 @@ function loadEvent() {
 function Events() {
   const template = `
     <div id="content">
-      <a class="link filter" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      <a class="link filter" 
+        data-toggle="collapse" href="#collapseExample" role="button" 
+        aria-expanded="false" aria-controls="collapseExample"> 
         Filtrar <i class="fas fa-filter"></i>
       </a>
       <div class="collapse" id="collapseExample">
-        <div class="card card-body">
-          <ul class="list-unstyled components">
-          <li>${Button({class: "link", title: "Eventos Gratuitos", onClick: freeEvents,})}</li>
+        <div>
+          <ul class="list-filter">
+          <li>${Button({class: "link", title: "Eventos gratuitos", onClick: freeEvents,})}</li>
           <li>
             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="link">
-            Esportes <i class="fas fa-caret-down"></i>
+              Esportes <i class="fas fa-caret-down"></i>
             </a>
             <ul class="collapse list-unstyled" id="homeSubmenu">
-              <li>🏀${Button({class: "link ", title: "Basquete", onClick: filterSports})}</li>
+              <li>🏀${Button({class: "link", title: "Basquete", onClick: filterSports})}</li>
               <li>🏃${Button({class: "link", title: "Corrida", onClick: filterSports})}</li>
               <li>🤾${Button({class: "link", title: "Handebol", onClick: filterSports})}</li>
               <li>🤼${Button({class: "link", title: "MMA", onClick: filterSports})}</li>
@@ -97,7 +99,7 @@ function Events() {
           </li>
           <li>
             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="link">
-            Gênero <i class="fas fa-caret-down"></i>
+              Gênero <i class="fas fa-caret-down"></i>
             </a>
             <ul class="collapse list-unstyled" id="pageSubmenu">
               <li>👩${Button({class: "link", title: "Feminino", onClick: filterGender})}</li>
@@ -111,6 +113,9 @@ function Events() {
       </div>
       <div class='container-events'>
         <ul class="eventos"></ul>
+      </div>
+      <div>
+        <a href="#" class="Begin">🔝</a>
       </div>
     </div>
   `;
