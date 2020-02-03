@@ -1,5 +1,5 @@
 function api() {
-  fetch("http://18.228.196.34/ge/futebol-americano")
+  fetch("https://squad-sport-c5d10.firebaseio.com/news.json")
     .then(res => res.json())
     .then(data => {
       document.querySelector('.eventos').innerHTML = '';
